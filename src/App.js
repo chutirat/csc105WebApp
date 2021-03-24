@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./css/App.css";
 import { Home } from "./pages/Home";
 import Navbar from "./component/Navbar";
-import ProductList from "./component/ProductList";
+import ProductList1 from "./component/ProductList1";
 import { Footer } from "./component/Footer";
+import ProductList2 from "./component/ProductList2";
 
 export default function App() {
   return (
@@ -19,8 +20,11 @@ export default function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/next">
-            <ProductList />
+          <Route path="/next/right1">
+            <ProductList1 />
+          </Route>
+          <Route path="/next/right2">
+            <ProductList2 />
           </Route>
           <Route path="/">
             <Home />

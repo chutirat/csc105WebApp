@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="/login">
           <FontAwesomeIcon icon={faRegistered} className="faRegis" /> Register
         </Link>
-        <Link to="/next">
+        <Link to="/next/right1">
           <FontAwesomeIcon icon={faClipboardList} className="faClip" />
           Product List
         </Link>

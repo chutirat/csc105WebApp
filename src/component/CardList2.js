@@ -35,8 +35,7 @@ export default function cardList1({ title }) {
             color="textSecondary"
             component="p"
           >
-            Photo card pack new single of EXO
-            (Sehun,Chanyeol,Baekhyun,Xiamin,D.O., KAI)
+            Good For Health Good For You
           </Typography>
         </CardContent>
       </CardActionArea>

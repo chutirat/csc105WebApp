@@ -8,40 +8,40 @@ import Left from "./Left";
 const ProductList2 = () => {
   const [invs, setInvs] = useState([
     {
-      title: "Aerith",
+      title: "Orange",
     },
     {
-      title: "Cympati",
+      title: "Banana",
     },
     {
-      title: "Ann",
+      title: "Mango",
     },
     {
-      title: "Aerith",
+      title: "Coconut",
     },
     {
-      title: "Cympati",
+      title: "Cherry",
     },
     {
-      title: "Ann",
+      title: "Water Melon",
     },
     {
-      title: "Aerith",
+      title: "Durian",
     },
     {
-      title: "Cympati",
+      title: "Rose Apple",
     },
     {
-      title: "Ann",
+      title: "Pine Apple",
     },
     {
-      title: "Aerith",
+      title: "Papaya",
     },
     {
-      title: "Cympati",
+      title: "Apple",
     },
     {
-      title: "Ann",
+      title: "Strawberry",
     },
   ]);
 

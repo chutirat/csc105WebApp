@@ -1,10 +1,9 @@
-h1 {
+.container1 h1 {
   text-align: center;
   color: rgb(247, 246, 255);
-  font-family: "Times New Roman", Times, serif;
   font-size: 800%;
 }
-p {
+.container1 p {
   text-align: center;
   color: rgb(250, 249, 255);
   font-family: "Times New Roman", Times, serif;

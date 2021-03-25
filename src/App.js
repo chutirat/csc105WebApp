@@ -7,15 +7,14 @@ import Navbar from "./component/Navbar";
 import ProductList1 from "./component/ProductList1";
 import { Footer } from "./component/Footer";
 import ProductList2 from "./component/ProductList2";
+import { Box } from "@material-ui/core";
 
 export default function App() {
   return (
     <Router>
-      <div>
-        <Navbar />
+      <Navbar />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+      <Box marginTop="64px">
         <Switch>
           <Route path="/login">
             <Login />
@@ -30,7 +29,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-      </div>
+      </Box>
     </Router>
   );
 }

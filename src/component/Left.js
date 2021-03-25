@@ -3,8 +3,10 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Avatar, Box, Button, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
+import ProfileImg from "../img/warehouse.png";
 
 const Left = () => {
   return (
@@ -37,7 +39,21 @@ const Left = () => {
         </div>
       </Link>
 
-      <div class="profile"></div>
+      <div class="profile">
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <Avatar
+            alt="Remy Sharp"
+            src={ProfileImg}
+            style={{ width: "52px", height: "52px" }}
+          />
+          <Typography variant="h6">My Profile</Typography>
+          <Typography variant="h6" gutterBottom>
+            {" "}
+            Earth{" "}
+          </Typography>
+        </Box>
+        <Button variant="contained">Seting</Button>
+      </div>
 
       <div className="Logout">
         <a>

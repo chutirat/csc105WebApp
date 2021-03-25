@@ -1,6 +1,7 @@
 import {
   faClipboard,
   faClipboardList,
+  faGlobeAmericas,
   faHome,
   faRegistered,
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,9 +22,15 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0 24px",
+        boxShadow: "0px 3px 10px 0px rgba(0,0,0,0.3)",
+        zIndex: "20",
+        position: "fixed",
+        top: 0,
       }}
     >
-      <h4>home</h4>
+      <h4>
+        <FontAwesomeIcon icon={faGlobeAmericas} className="faGlobe" />
+      </h4>
 
       <div
         className="navBarRightSide"

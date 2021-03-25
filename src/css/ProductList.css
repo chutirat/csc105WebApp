@@ -4,29 +4,31 @@
   height: 100vh;
 }
 .inventory .left {
-  flex: 1;
-  background-color: rgb(243, 39, 39);
+  width: 300px;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-right: 1px solid #dadce0;
 }
 
 .inventory .right {
-  flex: 3;
-  background-color: aquamarine;
+  flex: 1;
+  background-color: white;
 }
 
 .inventory .left > h1 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
+  color: black;
 }
 
 .inventory .left > h1 .faDolly {
   font-size: 50px;
   text-align: center;
   margin-top: 20px;
+  color: rgb(115, 8, 8);
 }
 
 .inventory .left .faDolly {
@@ -36,60 +38,65 @@
 .InStock {
   display: flex;
   justify-content: center;
-  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .InStock a {
   transition: 0.4s;
-  padding: 10px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 .OutStock a {
   transition: 0.4s;
-  padding: 10px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
 .OutStock {
   display: flex;
   justify-content: center;
-  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   transition: 0.8s;
 }
 
 .OutStock a:hover {
   background-color: black;
-  color: antiquewhite;
+  color: rgb(233, 110, 110);
   border-radius: 999px;
 }
 
 .InStock a:hover {
   background-color: black;
-  color: antiquewhite;
+  color: rgb(233, 110, 110);
   border-radius: 999px;
 }
 
 .inventory .left .profile {
   width: 200px;
-  height: 200px;
-  background-color: aqua;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 24px 12px;
+  border-radius: 24px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .Logout a:hover {
   background-color: black;
-  color: antiquewhite;
+  color: rgb(233, 110, 110);
   border-radius: 999px;
 }
 
 .Logout > a {
   display: flex;
   justify-content: flex-start;
-  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   transition: 0.8s;
+  align-items: center;
 }
 
 .Logout a {
@@ -100,6 +107,7 @@
 .Logout {
   display: flex;
   justify-content: center;
+  padding: 10px 10px;
 }
 
 .left .left-bottom {
@@ -114,4 +122,9 @@
 
 .link2 .OutStock {
   margin-bottom: 60px;
+}
+
+.inventory .right .search {
+  align-items: center;
+  font-size: 30px;
 }

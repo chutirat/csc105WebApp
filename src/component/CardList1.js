@@ -22,7 +22,7 @@ export default function cardList1({ title }) {
     >
       <CardActionArea className="actionArea">
         <CardMedia
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="/static/images/cherry.jpg"
           title="Contemplative Reptile"
         />
         <CardContent className="cardContent">

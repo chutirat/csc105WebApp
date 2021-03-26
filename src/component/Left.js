@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Box, Button, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import ProfileImg from "../img/warehouse.png";
+import ProfileImg from "../img/redd.png";
 
 const Left = () => {
   return (
@@ -47,19 +47,26 @@ const Left = () => {
             style={{ width: "52px", height: "52px" }}
           />
           <Typography variant="h6">My Profile</Typography>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="p" style={{ fontSize: "15px" }} gutterBottom>
             {" "}
-            Earth{" "}
+            Chutirat S.{" "}
+          </Typography>
+          <Typography variant="p" gutterBottom>
+            Project 105 WebApplication
+          </Typography>
+
+          <Typography variant="p" gutterBottom>
+            Front-End
           </Typography>
         </Box>
         <Button variant="contained">Seting</Button>
       </div>
 
       <div className="Logout">
-        <a>
+        <Link to="/login" style={{ textDecoration: "none" }}>
           <FontAwesomeIcon icon={faSignOutAlt} className="Logout" />
           Log Out
-        </a>
+        </Link>
       </div>
     </div>
   );

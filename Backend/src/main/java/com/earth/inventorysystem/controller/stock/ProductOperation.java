@@ -99,7 +99,7 @@ public class ProductOperation {
 
         try {
             connection = MySqlConnection.getConnection();
-            preparedStatement = connection.prepareStatement("INSERT into buying(date,amount,user_id,stock_id) values(?,?,?,?) ");
+            preparedStatement = connection.prepareStatement("INSERT into buying (date,amount,user_id,stock_id) values (?,?,?,?) ");
             preparedStatement.setTimestamp(1, now);
             preparedStatement.setInt(2, amount);
             preparedStatement.setInt(3, user_id);

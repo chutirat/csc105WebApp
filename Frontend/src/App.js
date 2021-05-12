@@ -8,6 +8,7 @@ import ProductList1 from "./component/ProductList1";
 import { Footer } from "./component/Footer";
 import ProductList2 from "./component/ProductList2";
 import { Box } from "@material-ui/core";
+import Dashboard from "./component/Dashboard";
 
 export default function App() {
   return (
@@ -18,6 +19,9 @@ export default function App() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/next/right1">
             <ProductList1 />

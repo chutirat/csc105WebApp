@@ -44,21 +44,17 @@
   transform: translateY(0px);
 }
 
-.col > ul > li {
+.col > ul li {
   display: flex;
   justify-content: center;
   padding: 10px;
   border-radius: 20px;
 }
 
-.col > ul > li:hover {
+.col > ul li:hover {
   opacity: 0.5;
   cursor: pointer;
   background-color: azure;
-}
-
-.col .text {
-  transform: translateY(70px);
 }
 
 .row .col-sm {

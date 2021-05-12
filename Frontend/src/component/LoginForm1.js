@@ -1,12 +1,35 @@
 import React, { useState } from "react";
+import qs from "qs";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
 const LoginForm1 = () => {
-  const login = () => {
-    console.log(userId, password);
-  };
-
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
+
+  const login = () => {
+    axios
+      .post(
+        "http://localhost:8080/account/login",
+        qs.stringify({
+          username: userId,
+          password: password,
+        })
+      )
+      .then((response) => {
+        console.log(response);
+        if (response.data.isLogin == true) {
+          Cookies.set("user_id", response.data.user.user_id);
+          Cookies.set("permission", response.data.user.permission);
+          history.push("/next/right1");
+          alert("Login Success");
+        } else {
+          alert("Login Failed");
+        }
+      });
+  };
 
   const userIdChange = (event) => {
     console.log(event.target.value);

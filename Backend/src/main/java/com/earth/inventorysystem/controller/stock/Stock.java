@@ -2,14 +2,14 @@ package com.earth.inventorysystem.controller.stock;
 
 import java.sql.ResultSet;
 
-public class Product {
+public class Stock {
     String productId;
     String name;
     int amount;
     String type;
     String description;
 
-    public Product(String productId, String name, int amount, String type, String description) {
+    public Stock(String productId, String name, int amount, String type, String description) {
         this.productId = productId;
         this.name = name;
         this.amount = amount;
@@ -57,7 +57,7 @@ public class Product {
         this.description = description;
     }
 
-    public Product(ResultSet rs) throws Exception {
+    public Stock(ResultSet rs) throws Exception {
         this.productId = rs.getString("Product_ID");
         this.name = rs.getString("Name");
         this.amount = rs.getInt("Amount");

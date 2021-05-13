@@ -4,6 +4,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Box, Button, Typography } from "@material-ui/core";
+import Cookies from "js-cookie";
 import React from "react";
 import { Link } from "react-router-dom";
 // import ProfileImg from "/img/redd.png";
@@ -18,27 +19,38 @@ const Left = () => {
         </h1>
 
         <Link
-          ClassName="link1"
           to="/next/right1"
           style={{ textDecoration: "none", color: "black" }}
         >
           <div className="InStock">
-            <a>In-Stock Product </a>
+            <a>All Product </a>
           </div>
         </Link>
 
-        <Link
-          className="link2"
-          to="/next/right2"
-          style={{
-            textDecoration: "none",
-            color: "black",
-          }}
-        >
-          <div className="OutStock">
-            <a>Out of Stock</a>
-          </div>
-        </Link>
+        {Cookies.get("permission") == "admin" && (
+          <>
+            <Link
+              to="/next/right2"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className="InStock">
+                <a>In-Stock Product </a>
+              </div>
+            </Link>
+
+            <Link
+              to="/next/right3"
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}
+            >
+              <div className="OutStock">
+                <a>Out of Stock</a>
+              </div>
+            </Link>
+          </>
+        )}
       </div>
 
       <div className="leftBottom">
@@ -47,20 +59,34 @@ const Left = () => {
             <Avatar
               alt="Remy Sharp"
               src={"/img/redd.png"}
-              style={{ width: "52px", height: "52px" }}
+              style={{ width: "160px", height: "160px" }}
             />
-            <Typography variant="h6">My Profile</Typography>
-            <Typography variant="p" style={{ fontSize: "15px" }} gutterBottom>
-              Chutirat S.
-            </Typography>
-            <Typography variant="p" gutterBottom>
-              Project 105 WebApplication
-            </Typography>
-            <Typography variant="p" gutterBottom>
-              Front-End
-            </Typography>
+            {Cookies.get("user_id") ? (
+              <>
+                <Typography variant="h6">My Profile</Typography>
+                <Typography
+                  variant="p"
+                  style={{ fontSize: "15px" }}
+                  gutterBottom
+                >
+                  {Cookies.get("username")}
+                </Typography>
+                <Typography
+                  variant="p"
+                  style={{ fontSize: "12px" }}
+                  gutterBottom
+                >
+                  {Cookies.get("email")}
+                </Typography>
+                <Typography variant="p" gutterBottom>
+                  Project 105 WebApplication
+                </Typography>
+              </>
+            ) : (
+              <Typography variant="h6">Not logged in</Typography>
+            )}
           </Box>
-          <Link to="/src/component/History">
+          <Link to="/history">
             <Button variant="contained">History</Button>
           </Link>
         </div>

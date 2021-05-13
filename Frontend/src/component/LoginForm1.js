@@ -23,7 +23,9 @@ const LoginForm1 = () => {
         if (response.data.isLogin == true) {
           Cookies.set("user_id", response.data.user.user_id);
           Cookies.set("permission", response.data.user.permission);
-          history.push("/next/right1");
+          Cookies.set("username", response.data.user.username);
+          Cookies.set("email", response.data.user.email);
+          window.location.href = "/next/right1";
           alert("Login Success");
         } else {
           alert("Login Failed");

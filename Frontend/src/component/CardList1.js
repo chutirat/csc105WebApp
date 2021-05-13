@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import "../css/Card1.css";
 import Cookies from "js-cookie";
 
-export default function cardList1({ title, img }) {
+export default function cardList1({ id, name, picture, type, open, amount }) {
   return (
     <Card
       className="card1"
@@ -22,7 +22,7 @@ export default function cardList1({ title, img }) {
     >
       <CardActionArea className="actionArea">
         <CardMedia
-          image={img}
+          image={picture}
           title="Cherry"
           style={{
             height: 200,
@@ -30,7 +30,7 @@ export default function cardList1({ title, img }) {
         />
         <CardContent className="cardContent">
           <Typography gutterBottom variant="h5" component="h2">
-            {title}
+            {name}
           </Typography>
           <Typography
             className="typography"
@@ -38,18 +38,29 @@ export default function cardList1({ title, img }) {
             color="textSecondary"
             component="p"
           >
-            Good For Health Good For You
+            {
+              {
+                simple_fruit: "Simple Fruit",
+                aggregate_fruit: "Aggregate Fruit",
+              }[type]
+            }
+          </Typography>
+          <Typography
+            variant="body2"
+            component="p"
+            style={{
+              color: amount == 0 ? "red" : amount < 100 ? "indianred" : "black",
+            }}
+          >
+            Amount {amount}
           </Typography>
         </CardContent>
       </CardActionArea>
 
-      {Cookies.get("permission") == "admin" && (
+      {Cookies.get("user_id") && (
         <CardActions className="cardAction">
-          <Button size="small" color="primary">
-            In Stock
-          </Button>
-          <Button className="button" size="small" color="primary">
-            Out Of Stock
+          <Button size="small" color="primary" onClick={open.bind(this, id)}>
+            Update Stock
           </Button>
         </CardActions>
       )}

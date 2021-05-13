@@ -7,54 +7,11 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
 import Left from "./Left";
-
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-  },
-];
+import Cookies from "js-cookie";
+import { faRegistered } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dashboard = () => {
   return (
@@ -62,44 +19,37 @@ const Dashboard = () => {
       <Left />
       <div className="right" style={{ alignSelf: "center" }}>
         <div>
-          <BarChart
-            width={730}
-            height={250}
-            data={data}
-            style={{ margin: "auto" }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="pv" fill="#8884d8" />
-            <Bar dataKey="uv" fill="#82ca9d" />
-          </BarChart>
+          {!Cookies.get("user_id") ? (
+            <>
+              <Box maxWidth="500px" margin="auto">
+                <Card>
+                  <CardHeader
+                    title="You're not Login now "
+                    style={{ textAlign: "center" }}
+                  />
 
-          <Box maxWidth="500px" margin="auto">
-            <Card>
-              <CardHeader title="List" />
-              <Divider />
-              <CardContent>
-                <Box display="flex" flexDirection="column">
-                  <Typography color="textSecondary" align="left">
-                    AAA
-                  </Typography>
-                  <Box display="flex" justifyContent="space-between">
-                    <Box
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="flex-start"
-                    >
-                      <Typography>A</Typography>
-                      <Typography>B</Typography>
+                  <CardContent>
+                    <Box display="flex" flexDirection="column">
+                      <Typography
+                        color="textSecondary"
+                        align="left"
+                        style={{ textAlign: "center" }}
+                      >
+                        Require to login!!!
+                      </Typography>
+                      <Box display="flex" justifyContent="space-between">
+                        <Box
+                          display="flex"
+                          flexDirection="column"
+                          alignItems="flex-start"
+                        ></Box>
+                      </Box>
                     </Box>
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
+                  </CardContent>
+                </Card>
+              </Box>
+            </>
+          ) : null}
         </div>
       </div>
     </div>

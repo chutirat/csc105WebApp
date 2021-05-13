@@ -22,7 +22,7 @@ public class Login {
         Map<String, Object> res = new HashMap<>();
         try {
             Connection connection = MySqlConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE username = ? AND password = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();

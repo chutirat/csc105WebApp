@@ -14,6 +14,13 @@ import "../css/Navbar.css";
 // import Home from "../img/home.png";
 
 const Navbar = () => {
+  const logout = () => {
+    Cookies.remove("user_id");
+    Cookies.remove("permission");
+    Cookies.remove("username");
+    Cookies.remove("email");
+  };
+
   return (
     <div
       style={{
@@ -45,23 +52,28 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faHome} className="faHome" />
           Home
         </Link>
-        {Cookies.get("user_id") ? (
-          <Link to="/login">
-            <FontAwesomeIcon icon={faRegistered} className="faRegis" /> Register
-          </Link>
-        ) : (
-          <Link to="/login">
-            <FontAwesomeIcon icon={faRegistered} className="faRegis" /> Log Out
-          </Link>
-        )}
         <Link to="/next/right1">
           <FontAwesomeIcon icon={faClipboardList} className="faClip" />
           Product List
         </Link>
-        <Link to="/Dashboard">
-          <FontAwesomeIcon icon={faChartArea} className="faChart" />
-          Montly Report
-        </Link>
+        {Cookies.get("user_id") ? (
+          <Link to="/History">
+            <FontAwesomeIcon icon={faChartArea} className="faChart" />
+            History
+          </Link>
+        ) : (
+          <></>
+        )}
+
+        {Cookies.get("user_id") ? (
+          <a href="/login" onClick={logout}>
+            <FontAwesomeIcon icon={faRegistered} className="faRegis" /> Log Out
+          </a>
+        ) : (
+          <Link to="/login">
+            <FontAwesomeIcon icon={faRegistered} className="faRegis" /> Login
+          </Link>
+        )}
       </div>
     </div>
   );

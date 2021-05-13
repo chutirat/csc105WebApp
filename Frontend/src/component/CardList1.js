@@ -14,56 +14,65 @@ import Cookies from "js-cookie";
 
 export default function cardList1({ id, name, picture, type, open, amount }) {
   return (
-    <Card
-      className="card1"
-      style={{
-        justifyContent: "space-between",
-      }}
-    >
-      <CardActionArea className="actionArea">
-        <CardMedia
-          image={picture}
-          title="Cherry"
+    <>
+      {Cookies.get("user_id") ? (
+        <Card
+          className="card1"
           style={{
-            height: 200,
+            justifyContent: "space-between",
           }}
-        />
-        <CardContent className="cardContent">
-          <Typography gutterBottom variant="h5" component="h2">
-            {name}
-          </Typography>
-          <Typography
-            className="typography"
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            {
-              {
-                simple_fruit: "Simple Fruit",
-                aggregate_fruit: "Aggregate Fruit",
-              }[type]
-            }
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
-            style={{
-              color: amount == 0 ? "red" : amount < 100 ? "indianred" : "black",
-            }}
-          >
-            Amount {amount}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+        >
+          <CardActionArea className="actionArea">
+            <CardMedia
+              image={picture}
+              title="Cherry"
+              style={{
+                height: 200,
+              }}
+            />
+            <CardContent className="cardContent">
+              <Typography gutterBottom variant="h5" component="h2">
+                {name}
+              </Typography>
+              <Typography
+                className="typography"
+                variant="body2"
+                color="textSecondary"
+                component="p"
+              >
+                {
+                  {
+                    simple_fruit: "Simple Fruit",
+                    aggregate_fruit: "Aggregate Fruit",
+                  }[type]
+                }
+              </Typography>
+              <Typography
+                variant="body2"
+                component="p"
+                style={{
+                  color:
+                    amount == 0 ? "red" : amount < 100 ? "indianred" : "black",
+                }}
+              >
+                Amount {amount}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
 
-      {Cookies.get("user_id") && (
-        <CardActions className="cardAction">
-          <Button size="small" color="primary" onClick={open.bind(this, id)}>
-            Update Stock
-          </Button>
-        </CardActions>
-      )}
-    </Card>
+          {Cookies.get("user_id") && (
+            <CardActions className="cardAction">
+              <Button
+                size="small"
+                color="primary"
+                onClick={open.bind(this, id)}
+              >
+                Update Stock
+              </Button>
+            </CardActions>
+          )}
+        </Card>
+      ) : null}
+    </>
   );
 }

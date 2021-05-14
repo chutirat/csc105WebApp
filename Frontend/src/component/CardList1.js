@@ -27,7 +27,7 @@ export default function cardList1({ id, name, picture, type, open, amount }) {
               image={picture}
               title="Cherry"
               style={{
-                height: 200,
+                height: 280,
               }}
             />
             <CardContent className="cardContent">

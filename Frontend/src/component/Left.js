@@ -60,6 +60,7 @@ const Left = () => {
               alt="Remy Sharp"
               src={"/img/redd.png"}
               style={{ width: "160px", height: "160px" }}
+              marginBottom="20px"
             />
             {Cookies.get("user_id") ? (
               <>
@@ -68,6 +69,7 @@ const Left = () => {
                   variant="p"
                   style={{ fontSize: "15px" }}
                   gutterBottom
+                  marginTop="20px"
                 >
                   {Cookies.get("username")}
                 </Typography>
@@ -78,7 +80,7 @@ const Left = () => {
                 >
                   {Cookies.get("email")}
                 </Typography>
-                <Typography variant="p" gutterBottom>
+                <Typography variant="p" gutterBottom alignItems="center">
                   Project 105 WebApplication
                 </Typography>
               </>

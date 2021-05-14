@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MySqlConnection {
-    private static final String db_url = "jdbc:mysql://mysql.cslab.bsthun.com:1205/inventory_system";
+    private static final String db_url = "jdbc:mysql://csproject.sit.kmutt.ac.th:3306/db63130500205";
 
     private static Connection connection;
 
@@ -17,7 +17,7 @@ public class MySqlConnection {
     }
 
     public static Connection reConnect() throws SQLException {
-        connection = DriverManager.getConnection(db_url, "aerith_1026", "1026");
+        connection = DriverManager.getConnection(db_url, "63130500205", "abcd1234");
         return connection;
     }
 }
